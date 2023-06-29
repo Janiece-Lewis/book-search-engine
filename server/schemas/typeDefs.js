@@ -6,7 +6,38 @@ type Query {
 type Mutation {
     login (email: String!, password: String!): Auth
     addUser (username: String!, email:String!,password: String!): Auth
+	// saveBook: [User](
+	// input BookInput 
+	// 	authors: [String!]!
+	// 	description: String!
+	// 	title: String!
+	// 	bookId: ID!
+	// 	image: String!
+	// 	link: String!)
+		removeBook(bookId: ID!): User
+
 }
+type User {
+    _id: ID
+    username: String
+    email: String
+    // bookCount: Number
+    savedBooks: [Book]!
+  }
+
+  type Book {
+	authors: [String!]!
+	description: String!
+	title: String!
+	bookId: ID!
+	image: String!
+	link: String!)
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
 `;
 
 // * `typeDefs.js`: Define the necessary `Query` and `Mutation` types:
