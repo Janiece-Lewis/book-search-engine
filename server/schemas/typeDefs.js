@@ -6,17 +6,17 @@ type Query {
 type Mutation {
     login (email: String!, password: String!): Auth
     addUser (username: String!, email:String!,password: String!): Auth
-	// saveBook: [User](
+	// saveBook: [Authors](
 	// input BookInput 
-	// 	authors: [String!]!
-	// 	description: String!
-	// 	title: String!
-	// 	bookId: ID!
-	// 	image: String!
+	// 	authors: [String!]!,
+	// 	description: String!,
+	// 	title: String!,
+	// 	bookId: ID!,
+	// 	image: String!,
 	// 	link: String!)
-		removeBook(bookId: ID!): User
+	
+removeBook(bookId: ID!): User
 
-}
 type User {
     _id: ID
     username: String
@@ -25,7 +25,7 @@ type User {
     savedBooks: [Book]!
   }
 
-  type Book {
+type Book {
 	authors: [String!]!
 	description: String!
 	title: String!
@@ -34,7 +34,7 @@ type User {
 	link: String!)
   }
 
-  type Auth {
+type Auth {
     token: ID!
     user: User
   }
@@ -43,7 +43,7 @@ type User {
 // * `typeDefs.js`: Define the necessary `Query` and `Mutation` types:
 
 
-		
+
 // 		* `Mutation` type:
 
 // 			* `login`: Accepts an email and password as parameters; returns an `Auth` type.
@@ -53,37 +53,37 @@ type User {
 // 			* `saveBook`: Accepts a book author's array, description, title, bookId, image, and link as parameters; returns a `User` type. (Look into creating what's known as an `input` type to handle all of these parameters!)
 
 // 			* `removeBook`: Accepts a book's `bookId` as a parameter; returns a `User` type.
-			
-		// * `User` type:
 
-		// 	* `_id`
+// * `User` type:
 
-		// 	* `username`
+// 	* `_id`
 
-		// 	* `email`
+// 	* `username`
 
-		// 	* `bookCount`
+// 	* `email`
 
-		// 	* `savedBooks` (This will be an array of the `Book` type.)
+// 	* `bookCount`
 
-		// * `Book` type:
+// 	* `savedBooks` (This will be an array of the `Book` type.)
 
-		// 	* `bookId` (Not the `_id`, but the book's `id` value returned from Google's Book API.)
+// * `Book` type:
 
-		// 	* `authors` (An array of strings, as there may be more than one author.)
+// 	* `bookId` (Not the `_id`, but the book's `id` value returned from Google's Book API.)
 
-		// 	* `description`
+// 	* `authors` (An array of strings, as there may be more than one author.)
 
-		// 	* `title`
+// 	* `description`
 
-		// 	* `image`
+// 	* `title`
 
-		// 	* `link`
+// 	* `image`
 
-		// * `Auth` type:
+// 	* `link`
 
-		// 	* `token`
+// * `Auth` type:
 
-		// 	* `user` (References the `User` type.)
+// 	* `token`
 
-        module.exports = typeDefs;
+// 	* `user` (References the `User` type.)
+
+module.exports = typeDefs;
