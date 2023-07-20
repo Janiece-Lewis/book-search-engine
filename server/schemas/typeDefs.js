@@ -26,6 +26,7 @@ type Book {
 	image: String
 	link: String
   }
+  
   input BookInput {
 	authors: [String]
 	description: String
